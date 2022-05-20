@@ -1,0 +1,44 @@
+.path_product {
+  padding-bottom: 16px;
+}
+
+.itemContainer {
+  background-color: white;
+  padding: 16px 0 0 32px;
+  .imagen {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  .detail_product {
+    padding-right: 32px;
+    .state_stock {
+      font-size: 14px;
+      padding: 32px 0 16px 0;
+    }
+    .product {
+      font-size: 24px;
+      font-weight: 600;
+      padding: 0 0 32px 0;
+
+      p {
+        margin: 0;
+      }
+    }
+    .price {
+      font-size: 46px;
+      font-weight: 600;
+      padding: 0 0 32px 0;
+      margin-bottom: 0;
+    }
+  }
+  .description {
+    font-size: 28px;
+    margin-bottom: 0;
+    padding: 32px 0 32px 0;
+  }
+  .description_detail {
+    font-size: 16px;
+    margin-bottom: 0;
+    padding: 0 0 32px 0;
+  }
+}

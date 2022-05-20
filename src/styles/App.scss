@@ -1,0 +1,12 @@
+@import "./normalize.scss";
+@import "./colores.scss";
+@import "./bootstrapReStyle.scss";
+@import "./navMenu.scss";
+@import "./item_list_container.scss";
+@import "./item_detail.scss";
+@import "./item.scss";
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $greyEE;
+}

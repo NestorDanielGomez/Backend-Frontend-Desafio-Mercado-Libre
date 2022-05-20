@@ -1,0 +1,19 @@
+.navMenu {
+  background-color: $yellowMeli;
+  .form-control {
+    border: 0;
+    border-radius: 5px 0 0 5px;
+  }
+  .text_find {
+    font-size: 18px;
+  }
+  .btn_find {
+    background-color: $greyEE;
+    border: 0;
+    border-radius: 0 5px 5px 0;
+  }
+
+  ::placeholder {
+    color: $gray99;
+  }
+}
