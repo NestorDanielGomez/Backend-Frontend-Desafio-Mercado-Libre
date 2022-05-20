@@ -40,6 +40,3 @@ const productsToFront = (products) => {
 };
 
 export default productsToFront;
-//
-// nomb: producto.attributes.name,
-// lastname: producto.attributes.value_name

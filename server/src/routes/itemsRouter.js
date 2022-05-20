@@ -1,17 +1,11 @@
 import { Router } from "express";
-import { getItems, getItemsById } from "../controllers/itemscontroller.js";
+import getItems from "../controllers/itemsController.js";
+import getItemsById from "../controllers/itemController.js";
 
 const router = Router();
 
-router.get("/:id", getItems);
+router.get("/search?", getItems);
 
-// router.get("/:id", getItemsById);
-
-// router.get("/", (request, response) => {
-//   response.json({
-//     titulo: "Todos los productos",
-//     data: "resultado",
-//   });
-// });
+router.get("/:id", getItemsById);
 
 export default router;
