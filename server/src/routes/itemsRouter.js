@@ -3,9 +3,9 @@ import { getItems, getItemsById } from "../controllers/itemscontroller.js";
 
 const router = Router();
 
-router.get("/", getItems);
+router.get("/:id", getItems);
 
-router.get("/:id", getItemsById);
+// router.get("/:id", getItemsById);
 
 // router.get("/", (request, response) => {
 //   response.json({

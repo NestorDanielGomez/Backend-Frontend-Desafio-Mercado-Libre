@@ -1,19 +1,23 @@
 import fetch from "node-fetch";
+import productsToFront from "../models/productsToFront.js";
 const URL = "https://api.mercadolibre.com";
 const limit = 4;
 const query = "pelota";
 const prodID = "MLA1116734898";
 
 export const getItems = async (req, res) => {
+  const q = req.params.id;
+
   try {
     const items = await fetch(
-      `${URL}/sites/MLA/search?q=${query}&limit=${limit}`
+      `${URL}/sites/MLA/search?q=:${q}&limit=${limit}`
     ).then((response) => {
       return response.json();
     });
+    const dataalfront = productsToFront(items);
 
     res.json({
-      data: items,
+      data: dataalfront,
     });
   } catch (err) {
     res.status(500).json({

@@ -1,10 +1,13 @@
 import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import imagen from "../../assets/detalle.jpg";
-const ItemDetail = () => {
+const ItemDetail = ({ producto }) => {
+  console.log("data", producto);
+  const { id } = producto;
+  console.log("id", id);
   return (
     <Row className="itemlist">
-      <p className="path_product">Breadcrumbs</p>
+      <p className="path_product">{id}</p>
       <Row className="itemContainer justify-content-between">
         <Col sm={7} xs={12} className=" order-2 order-sm-1">
           <img src={imagen} alt="" className="imagen" />
