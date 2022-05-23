@@ -37,4 +37,4 @@ EJEMPLO: MOSTRAR PRODUCTO
 <img src="./public/mostrarproducto.gif" />
 
 EJEMPLO: RESPONSIVE
-<img src="./public/mostrarproducto.gif" />
+<img src="./public/resposiveejemplo.gif" />
