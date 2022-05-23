@@ -36,39 +36,38 @@ const ProductsList = () => {
             {items.map((product, index) => {
               return (
                 <Row className="item_container" key={index}>
-                  <NavLink to={`/items/${product.id}`}>
-                    <div className="item">
+                  <div className="item">
+                    <NavLink to={`/items/${product.id}`}>
                       <img
                         src={product.picture}
                         alt={product.title}
                         className="imagen w-100"
                       />
-
-                      <div className="item_detail">
-                        <div className="item_price">
-                          <h3 className="price">
-                            $ {product.price.amount}
-                            <span className="ms-2">
-                              {product.free_shipping ? (
-                                <img
-                                  src={ic_shipping}
-                                  alt={product.title}
-                                  height="25"
-                                />
-                              ) : (
-                                <span></span>
-                              )}
-                              {/*  */}
-                            </span>
-                          </h3>
-                          <p className="location">Capital Federal</p>
-                        </div>
-
-                        <p className="description">{product.title}</p>
-                        <p className="description">{product.condition}</p>
+                    </NavLink>
+                    <div className="item_detail">
+                      <div className="item_price">
+                        <h3 className="price">
+                          $ {product.price.amount}
+                          <span className="ms-2">
+                            {product.free_shipping ? (
+                              <img
+                                src={ic_shipping}
+                                alt={product.title}
+                                height="25"
+                              />
+                            ) : (
+                              <span></span>
+                            )}
+                            {/*  */}
+                          </span>
+                        </h3>
+                        <p className="location">Capital Federal</p>
                       </div>
+
+                      <p className="description">{product.title}</p>
+                      <p className="description">{product.condition}</p>
                     </div>
-                  </NavLink>
+                  </div>
                 </Row>
               );
             })}

@@ -25,4 +25,16 @@ Herramientas utilizadas del lado del cliente:
 - Axios {Peticiones al servidor}
 - Sass {Estilos}
 
-### `npm test`
+### `CREAR UN ARCHIVO .ENV EN LA CARPETA SERVER CPN LOS SIGUIENTES VALORES`
+
+URLMELI=https://api.mercadolibre.com
+PORT=8080
+
+EJEMPLO: BUSCAR PRODUCTO
+<img src="./public/buscarproducto.gif" />
+
+EJEMPLO: MOSTRAR PRODUCTO
+<img src="./public/mostrarproducto.gif" />
+
+EJEMPLO: RESPONSIVE
+<img src="./public/mostrarproducto.gif" />
