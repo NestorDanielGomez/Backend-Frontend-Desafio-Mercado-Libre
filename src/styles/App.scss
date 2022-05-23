@@ -1,10 +1,9 @@
 @import "./normalize.scss";
-@import "./colores.scss";
+@import "./colors.scss";
 @import "./bootstrapReStyle.scss";
-@import "./navMenu.scss";
-@import "./item_list_container.scss";
-@import "./item_detail.scss";
-@import "./item.scss";
+@import "../components/navbar/navMenu";
+@import "../components/itemlist/ProductsList.scss";
+@import "../components//item_detail/ProductDetails.scss";
 
 body {
   font-family: "Montserrat", sans-serif;

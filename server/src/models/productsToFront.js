@@ -1,18 +1,21 @@
 import author from "./author.js";
 
+class searchResultados {
+  constructor(items, author, categories) {
+    this.items = items;
+    this.author = author;
+    this.categories = categories;
+  }
+}
+
 const productsToFront = (products) => {
-  let searchResults = {};
-  //array con los 4 productos
+  let results = new searchResultados();
   const itemsFounded = products.results;
-  //array con las categorias
-  const categoriesFound = products.filters[0].values[0].path_from_root;
 
-  searchResults.items = [];
+  const categorieToInspect = products.filters;
 
-  //array con los items de cada busqueda
   const arrayOfItems = itemsFounded.map((product) => {
     let item = {};
-
     item.id = product.id;
     item.title = product.title;
     item.price = {
@@ -23,20 +26,18 @@ const productsToFront = (products) => {
     item.picture = product.thumbnail;
     item.condition = product.condition;
     item.free_shipping = product.shipping.free_shipping;
-    searchResults.items.push(item);
     return item;
   });
 
-  //array con las categorias de los productos de la busqueda
-  const arrayOfCategories = categoriesFound.map((categorie) => {
-    return categorie.name;
-  });
+  results.author = author;
+  results.categories =
+    categorieToInspect.length === 0
+      ? false
+      : products.filters[0].values[0].path_from_root;
 
-  searchResults.author = author;
-  searchResults.categories = arrayOfCategories;
-  searchResults.items = arrayOfItems;
+  results.items = arrayOfItems;
 
-  return searchResults;
+  return results;
 };
 
 export default productsToFront;

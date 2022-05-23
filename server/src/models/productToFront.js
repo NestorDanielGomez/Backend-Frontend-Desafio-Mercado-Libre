@@ -1,13 +1,21 @@
 import author from "./author.js";
 
+class itemDescription {
+  constructor(items, author, description) {
+    this.items = items;
+    this.author = author;
+    this.description = description;
+  }
+}
+
 const productToFront = (product, description) => {
-  const myProduct = {};
+  const item = new itemDescription();
+  // const pictures = [];
 
-  const pictures = [];
+  // const imgProducts = product.pictures.map((picture) => picture.secure_url);
+  // pictures.push(imgProducts);
 
-  const imgProducts = product.pictures.map((picture) => picture.secure_url);
-  console.log("pictures", imgProducts);
-  pictures.push(imgProducts);
+  // const imgProduct = product.pictures[0];
 
   const itemProduct = {
     id: product.id,
@@ -17,17 +25,17 @@ const productToFront = (product, description) => {
       amount: product.price,
       decimals: "00",
     },
-    picture: pictures,
+    picture: product.pictures[0].url,
     condition: product.condition,
     free_shipping: product.shipping.free_shipping,
     sold_quantity: product.sold_quantity,
   };
 
-  myProduct.author = author;
-  myProduct.item = itemProduct;
-  myProduct.description = description.plain_text;
+  item.author = author;
+  item.item = itemProduct;
+  item.description = description.plain_text;
 
-  return myProduct;
+  return item;
 };
 
 export default productToFront;

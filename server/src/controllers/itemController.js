@@ -1,28 +1,23 @@
-import fetch from "node-fetch";
+import axios from "axios";
 import productToFront from "../models/productToFront.js";
-const URL = "https://api.mercadolibre.com";
 
 const getItemsById = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const fetchItem = await fetch(`${URL}/items/${id}`).then((response) => {
-      return response.json();
-    });
+    const fetchItem = await axios.get(`${process.env.URLMELI}/items/${id}`);
 
-    const fetchDescription = await fetch(`${URL}/items/${id}/description`).then(
-      (response) => {
-        return response.json();
-      }
+    const fetchDescription = await axios.get(
+      `${process.env.URLMELI}/items/${id}/description`
     );
 
-    const data = await productToFront(fetchItem, fetchDescription);
+    const data = productToFront(fetchItem.data, fetchDescription.data);
 
-    res.json({
-      data: data,
+    return res.status(200).json({
+      data,
     });
   } catch (err) {
-    res.status(500).json({
+    return res.status(500).json({
       error: err.message,
       stack: err.stack,
     });

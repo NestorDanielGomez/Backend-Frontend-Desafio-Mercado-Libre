@@ -1,4 +1,4 @@
 import serverapp from "./services/server.js";
-
-const puerto = 8080;
-serverapp.listen(puerto, () => console.log("Server up en puerto", puerto));
+import "dotenv/config";
+const PORT = `${process.env.PORT}`;
+serverapp.listen(PORT, () => console.log("Server Up"));

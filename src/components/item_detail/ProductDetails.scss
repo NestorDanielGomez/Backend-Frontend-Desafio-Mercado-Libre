@@ -1,12 +1,14 @@
 .path_product {
   padding-bottom: 16px;
 }
-
+.RowClass {
+  --bs-gutter-x: 0 !important;
+}
 .itemContainer {
   background-color: white;
   padding: 16px 0 0 32px;
   .imagen {
-    max-width: 100%;
+    max-width: 680px;
     border-radius: 4px;
   }
   .detail_product {
