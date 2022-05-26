@@ -29,6 +29,9 @@ export const productsSlices = createSlice({
   name: `productreducers`,
   initialState,
   reducers: {
+    // addProducts: (state, { payload }) => {
+    //   state.list = payload;
+    // },
     removeSelectedProduct: (state) => {
       state.selectProduct = {};
     },

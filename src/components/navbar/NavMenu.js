@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   Container,
   Navbar,
@@ -15,11 +15,13 @@ import { fetchAsyncProducts } from "../../redux/slices/products";
 
 const NavMenu = () => {
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
     if (search === "") return <Alert>INGRESE UNA PALABRA PARA BUSCAR</Alert>;
     dispatch(fetchAsyncProducts(search));
+    navigate("/");
     setSearch("");
   };
 

@@ -10,12 +10,6 @@ class itemDescription {
 
 const productToFront = (product, description) => {
   const item = new itemDescription();
-  // const pictures = [];
-
-  // const imgProducts = product.pictures.map((picture) => picture.secure_url);
-  // pictures.push(imgProducts);
-
-  // const imgProduct = product.pictures[0];
 
   const itemProduct = {
     id: product.id,

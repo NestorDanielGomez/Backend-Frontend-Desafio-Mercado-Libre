@@ -1,25 +1,22 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Container, Row, Alert } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAsyncProducts, GetProducts } from "../../redux/slices/products";
+import { useSelector } from "react-redux";
+import { GetProducts } from "../../redux/slices/products";
 import ic_shipping from "../../assets/ic_shipping.png";
 
 const ProductsList = () => {
   let estadoparacargar = useSelector(GetProducts);
-
   const { items, categories } = estadoparacargar;
-  const dispatch = useDispatch();
-  const DefaultSearch = "celular";
 
-  useEffect(() => {
-    dispatch(fetchAsyncProducts(DefaultSearch));
-  }, [dispatch]);
-
+  console.log("estadoparacargar", estadoparacargar);
   return (
     <Container className="item_list_container">
+      {}
       {!estadoparacargar.items ? (
-        <Alert variant="success text-center fs-4">CARGANDO PRODUCTO</Alert>
+        <Alert variant="success text-center fs-4">
+          BUSQUE UN PRODUCTO Y PRESIONE ENTER
+        </Alert>
       ) : (
         <>
           <Row className="itemlist">
